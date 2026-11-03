@@ -242,7 +242,7 @@ def budgets():
         FROM budgets b LEFT JOIN categories c ON c.category_id=b.category_id LEFT JOIN expenses e ON e.user_id=b.user_id
         AND e.expense_date >= b.budget_month AND e.expense_date < DATE_ADD(b.budget_month,INTERVAL 1 MONTH)
         AND (b.category_id IS NULL OR e.category_id=b.category_id) WHERE b.user_id=%s
-        GROUP BY b.budget_id,b.budget_month,b.amount,c.category_name ORDER BY b.budget_month DESC,b.budget_id", (uid,))
+        GROUP BY b.budget_id,b.budget_month,b.amount,c.category_name ORDER BY b.budget_month DESC,b.budget_id""", (uid,))
     return render_template("budgets.html", rows=rows, categories=cats)
 
 
