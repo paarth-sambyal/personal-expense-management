@@ -16,7 +16,7 @@ services:
       - key: DB_PORT
         sync: false
       - key: DB_NAME
-        value: personal_expense_db
+        value: defaultdb
       - key: DB_USER
         sync: false
       - key: DB_PASSWORD
